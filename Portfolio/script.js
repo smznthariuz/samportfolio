@@ -33,3 +33,15 @@ document.addEventListener('keydown', (e) => {
         modal.style.display = "none";
     }
 });
+
+// Educational background reveal toggles
+const eduToggles = document.querySelectorAll('.edu-toggle');
+
+eduToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const card = toggle.closest('.education-card');
+        const isExpanded = card.classList.toggle('expanded');
+        toggle.setAttribute('aria-expanded', isExpanded);
+        toggle.textContent = isExpanded ? 'Hide Highlights' : 'Show Highlights';
+    });
+});
